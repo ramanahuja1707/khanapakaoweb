@@ -25,5 +25,7 @@
 				out.println("<br>LOGOUT SUCCESSFULLY");
 		}
 	%>
+	<br>
+	<a href="index.html"><input type="button" value="Home" /></a>
 </body>
 </html>
