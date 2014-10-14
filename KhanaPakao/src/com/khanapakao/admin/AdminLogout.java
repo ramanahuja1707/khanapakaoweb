@@ -19,10 +19,11 @@ public class AdminLogout extends HttpServlet {
 			session.removeAttribute("username");
 			session.removeAttribute("password");
 			req.setAttribute("logoutcheck", "yes");
-			RequestDispatcher rd = req.getRequestDispatcher("adminLogin.jsp");
+			RequestDispatcher rd = req.getRequestDispatcher("/adminLogin.jsp");
 			rd.forward(req, resp);
 		} else {
-			RequestDispatcher rd = req.getRequestDispatcher("notInSession.jsp");
+			RequestDispatcher rd = req
+					.getRequestDispatcher("/notInSession.jsp");
 			rd.forward(req, resp);
 		}
 

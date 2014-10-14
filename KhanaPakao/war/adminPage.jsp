@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Khana Pakao</title>
 </head>
 <body>
 	<%
@@ -15,10 +15,13 @@
 			rd.forward(request, response);
 		}
 	%>
-	successfully logged in !!!!
+	<h1>Successfully Logged In !!!!</h1>
 	<br>
 	<br>
-	<a href="adminlogout" alt=""><input type="button" value="Logout" /></a>
+	<a href="addRecipe.jsp"><input type="button" value="Add New Recipe" /></a>
+	<br>
+	<br>
+	<a href="adminlogout"><input type="button" value="Logout" /></a>
 
 
 </body>

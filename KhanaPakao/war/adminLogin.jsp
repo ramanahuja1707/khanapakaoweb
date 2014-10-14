@@ -5,13 +5,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Khana Pakao</title>
 </head>
 <body>
 	<form action="adminlogin" method="post">
 		UserName:<input type="text" name="username" /> <br> <br>Password:<input
-			type="password" name="password" /> <br> <br>
-		<input type="submit" value="login" />
+			type="password" name="password" /> <br> <br> <input
+			type="submit" value="login" />
 	</form>
 	<%
 		String logincheck = (String) request.getAttribute("logincheck");

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Khana Pakao</title>
 </head>
 <body>
 	Sorry ,,, u r not in the session .....Please login again here ...
