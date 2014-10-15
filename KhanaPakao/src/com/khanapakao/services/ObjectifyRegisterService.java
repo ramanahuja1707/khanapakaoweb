@@ -18,24 +18,23 @@ import com.khanapakao.dto.UserReminder;
 
 public class ObjectifyRegisterService extends HttpServlet {
 
-	@Override
-	public void init() throws ServletException {
+	// @Override
+	// public void init() throws ServletException {
+	// ObjectifyService.register(User.class);
+	// ObjectifyService.register(Recipe.class);
+	// ObjectifyService.register(User.class);
+	// ObjectifyService.register(RecipeUserComments.class);
+	// ObjectifyService.register(Ingredients.class);
+	// ObjectifyService.register(UserReminder.class);
+	// }
+
+	static {
 		ObjectifyService.register(User.class);
 		ObjectifyService.register(Recipe.class);
-		ObjectifyService.register(User.class);
 		ObjectifyService.register(RecipeUserComments.class);
 		ObjectifyService.register(Ingredients.class);
 		ObjectifyService.register(UserReminder.class);
 	}
-
-	/*
-	 * static { ObjectifyService.register(User.class);
-	 * ObjectifyService.register(Recipe.class);
-	 * ObjectifyService.register(User.class);
-	 * ObjectifyService.register(RecipeUserComments.class);
-	 * ObjectifyService.register(Ingredients.class);
-	 * ObjectifyService.register(UserReminder.class); }
-	 */
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
