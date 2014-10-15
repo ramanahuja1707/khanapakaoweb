@@ -53,7 +53,8 @@
 			<br /> <br /> Select Type:<select name="type">
 				<option value="veg">Veg.</option>
 				<option value="non-veg">Non-Veg.</option>
-			</select> <br /> <br /> <input type="submit" value="Add Recipe">
+			</select> <br /> <br />Recipe Servings: <input type="text" name="serving">
+			<br /> <br /> <input type="submit" value="Add Recipe">
 		</form>
 	</center>
 </body>

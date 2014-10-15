@@ -22,6 +22,29 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		<servlet-name>AdminLogout</servlet-name>
 		<url-pattern>/adminlogout</url-pattern>
 	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>AddRecipe</servlet-name>
+		<servlet-class>com.khanapakao.action.AddRecipe</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddRecipe</servlet-name>
+		<url-pattern>/addrecipe</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ObjectifyRegisterService</servlet-name>
+		<servlet-class>com.khanapakao.services.ObjectifyRegisterService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ObjectifyRegisterService</servlet-name>
+		<url-pattern>/objectifyregisterservice</url-pattern>
+	</servlet-mapping>
+
+
+
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>

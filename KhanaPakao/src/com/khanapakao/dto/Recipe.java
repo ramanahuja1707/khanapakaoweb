@@ -1,14 +1,13 @@
 package com.khanapakao.dto;
 
-import java.util.ArrayList;
 import java.util.Date;
-
 import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.googlecode.objectify.annotation.Entity;
 
 @Entity
 public class Recipe {
@@ -17,7 +16,7 @@ public class Recipe {
 	String category;
 	String description;
 	@ElementCollection(fetch = FetchType.EAGER)
-	ArrayList<String> instructions;
+	String instructions;
 	String timeToPrepare;
 	String timeTocook;
 	String totalTime;
@@ -29,7 +28,7 @@ public class Recipe {
 	String recipeTaste;
 	long totalLikes;
 	long totalComment;
-	long totalRating;
+	float totalRating;
 	String type;
 	@Temporal(TemporalType.DATE)
 	Date recipePostedDate;
@@ -60,11 +59,11 @@ public class Recipe {
 		this.description = description;
 	}
 
-	public ArrayList<String> getInstructions() {
+	public String getInstructions() {
 		return instructions;
 	}
 
-	public void setInstructions(ArrayList<String> instructions) {
+	public void setInstructions(String instructions) {
 		this.instructions = instructions;
 	}
 
@@ -156,11 +155,11 @@ public class Recipe {
 		this.totalComment = totalComment;
 	}
 
-	public long getTotalRating() {
+	public float getTotalRating() {
 		return totalRating;
 	}
 
-	public void setTotalRating(long totalRating) {
+	public void setTotalRating(float totalRating) {
 		this.totalRating = totalRating;
 	}
 

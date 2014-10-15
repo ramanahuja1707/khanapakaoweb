@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 import javax.persistence.Id;
 
+import com.googlecode.objectify.annotation.Entity;
+
+@Entity
 public class User {
 
 	@Id
