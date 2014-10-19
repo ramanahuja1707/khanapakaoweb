@@ -63,6 +63,26 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	</servlet-mapping>
 
 
+
+	<servlet>
+		<servlet-name>GetRecipesByType</servlet-name>
+		<servlet-class>com.khanapakao.services.GetRecipesByType</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetRecipesByType</servlet-name>
+		<url-pattern>/getrecipesbytype</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>GetRecipesByTopRating</servlet-name>
+		<servlet-class>com.khanapakao.services.GetRecipesByTopRating</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetRecipesByTopRating</servlet-name>
+		<url-pattern>/getrecipesbytoprating</url-pattern>
+	</servlet-mapping>
+
+
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
