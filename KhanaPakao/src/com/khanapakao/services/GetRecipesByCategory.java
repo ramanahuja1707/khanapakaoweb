@@ -2,8 +2,6 @@ package com.khanapakao.services;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,12 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONObject;
 
 import com.google.appengine.labs.repackaged.org.json.JSONArray;
-import com.google.gson.Gson;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.Query;
 import com.khanapakao.dto.Recipe;
 
-public class GetRecipes extends HttpServlet {
+public class GetRecipesByCategory extends HttpServlet {
 	JSONObject jsonData;
 
 	@Override
@@ -28,7 +25,8 @@ public class GetRecipes extends HttpServlet {
 		resp.setContentType("text/json");
 		try {
 			Objectify ob = ObjectifyRegisterService.registerService();
-			Query<Recipe> q = (Query<Recipe>) ob.query(Recipe.class);
+			Query<Recipe> q = (Query<Recipe>) ob.query(Recipe.class).filter(
+					"category", req.getParameter("category"));
 			if (q.list().size() > 0) {
 				jsonData = new JSONObject();
 				JSONArray recipes = new JSONArray();

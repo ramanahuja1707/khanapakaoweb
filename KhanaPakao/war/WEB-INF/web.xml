@@ -52,6 +52,17 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		<url-pattern>/getrecipes</url-pattern>
 	</servlet-mapping>
 
+
+	<servlet>
+		<servlet-name>GetRecipesByCategory</servlet-name>
+		<servlet-class>com.khanapakao.services.GetRecipesByCategory</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetRecipesByCategory</servlet-name>
+		<url-pattern>/getrecipesbycategory</url-pattern>
+	</servlet-mapping>
+
+
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>

@@ -90,12 +90,12 @@ public class Recipe {
 		this.totalTime = totalTime;
 	}
 
-	public boolean isVideoStatus() {
-		return videoStatus;
-	}
-
 	public void setVideoStatus(boolean videoStatus) {
 		this.videoStatus = videoStatus;
+	}
+
+	public boolean getVideoStatus() {
+		return videoStatus;
 	}
 
 	public String getVideoLink() {
@@ -114,7 +114,7 @@ public class Recipe {
 		this.imageName = imageName;
 	}
 
-	public boolean isImageStatus() {
+	public boolean getImageStatus() {
 		return imageStatus;
 	}
 
