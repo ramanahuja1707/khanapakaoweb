@@ -67,14 +67,14 @@ public class GetRecipes extends HttpServlet {
 				jsonData = new JSONObject();
 				jsonData.put("Status", "not_ok");
 				jsonData.put("recipes", "no_data");
-				out.println(jsonData);
+				out.println(jsonData.toJSONString());
 			}
 		} catch (Exception e) {
 			jsonData = new JSONObject();
 			jsonData.put("Status", "not_ok");
 			jsonData.put("recipes", "no_data");
 			jsonData.put("error", e);
-			out.println(jsonData);
+			out.println(jsonData.toJSONString());
 		}
 	}
 }
