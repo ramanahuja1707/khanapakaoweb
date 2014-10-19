@@ -33,7 +33,6 @@ public class Recipe {
 	@Temporal(TemporalType.DATE)
 	Date recipePostedDate;
 	long serving;
-	String retrieveStatus;
 
 	public String getRecipeName() {
 		return recipeName;
@@ -186,13 +185,4 @@ public class Recipe {
 	public void setServing(long serving) {
 		this.serving = serving;
 	}
-
-	public String getRetrieveStatus() {
-		return retrieveStatus;
-	}
-
-	public void setRetrieveStatus(String retrieveStatus) {
-		this.retrieveStatus = retrieveStatus;
-	}
-
 }
