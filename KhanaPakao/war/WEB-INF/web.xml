@@ -101,6 +101,15 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		<url-pattern>/unlikerecipe</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>SaveUser</servlet-name>
+		<servlet-class>com.khanapakao.action.SaveUser</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SaveUser</servlet-name>
+		<url-pattern>/saveuser</url-pattern>
+	</servlet-mapping>
+
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
