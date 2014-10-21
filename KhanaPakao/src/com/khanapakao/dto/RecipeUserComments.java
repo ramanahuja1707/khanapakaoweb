@@ -8,11 +8,28 @@ import com.googlecode.objectify.annotation.Entity;
 
 @Entity
 public class RecipeUserComments {
-
+	// stored in form of (reciepName_userMailId_comment+commentNo)
 	@Id
+	String commentId;
 	String recipeName;
 	String userMailId;
-	ArrayList<String> comments;
+	String comments;
+
+	public String getCommentId() {
+		return commentId;
+	}
+
+	public void setCommentId(String commentId) {
+		this.commentId = commentId;
+	}
+
+	public String getComments() {
+		return comments;
+	}
+
+	public void setComments(String comments) {
+		this.comments = comments;
+	}
 
 	public String getRecipeName() {
 		return recipeName;
@@ -28,14 +45,6 @@ public class RecipeUserComments {
 
 	public void setUserMailId(String userMailId) {
 		this.userMailId = userMailId;
-	}
-
-	public ArrayList<String> getComments() {
-		return comments;
-	}
-
-	public void setComments(ArrayList<String> comments) {
-		this.comments = comments;
 	}
 
 }

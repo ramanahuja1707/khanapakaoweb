@@ -110,6 +110,20 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		<url-pattern>/saveuser</url-pattern>
 	</servlet-mapping>
 
+
+
+	<servlet>
+		<servlet-name>CommentOnRecipe</servlet-name>
+		<servlet-class>com.khanapakao.action.CommentOnRecipe</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CommentOnRecipe</servlet-name>
+		<url-pattern>/commentonrecipe</url-pattern>
+	</servlet-mapping>
+
+
+
+
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
