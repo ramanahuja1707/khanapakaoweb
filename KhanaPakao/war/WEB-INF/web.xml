@@ -122,6 +122,37 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	</servlet-mapping>
 
 
+	<servlet>
+		<servlet-name>GetRecipesByUser</servlet-name>
+		<servlet-class>com.khanapakao.services.GetRecipesByUser</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetRecipesByUser</servlet-name>
+		<url-pattern>/getrecipesbyuser</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>GetRecipeComments</servlet-name>
+		<servlet-class>com.khanapakao.services.GetRecipeComments</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetRecipeComments</servlet-name>
+		<url-pattern>/getrecipecomments</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<servlet>
+		<servlet-name>AddToUserWishlist</servlet-name>
+		<servlet-class>com.khanapakao.action.AddToUserWishlist</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddToUserWishlist</servlet-name>
+		<url-pattern>/addtouserwishlist</url-pattern>
+	</servlet-mapping>
+
 
 
 	<welcome-file-list>

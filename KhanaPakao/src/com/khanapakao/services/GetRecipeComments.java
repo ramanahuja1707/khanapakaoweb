@@ -13,49 +13,54 @@ import org.json.simple.JSONObject;
 import com.google.appengine.labs.repackaged.org.json.JSONArray;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.Query;
-import com.khanapakao.dto.User;
+import com.khanapakao.dto.RecipeUserComments;
 
-public class GetRecipesByUser extends HttpServlet {
+public class GetRecipeComments extends HttpServlet {
 	JSONObject jsonData;
+	JSONArray userIds;
+	JSONArray comments;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-
 		PrintWriter out = resp.getWriter();
 		resp.setContentType("text/json");
 		try {
 			Objectify ob = ObjectifyRegisterService.registerService();
-			Query<User> q = (Query<User>) ob.query(User.class).filter(
-					"userMailId", req.getParameter("usermailid"));
-			if (q.list().size() == 1) {
+			Query<RecipeUserComments> q = (Query<RecipeUserComments>) ob.query(
+					RecipeUserComments.class).filter("recipeName",
+					req.getParameter("recipename"));
+			if (q.list().size() > 0) {
 				jsonData = new JSONObject();
-				if (q.list().get(0).getUserWish() != null) {
-					JSONArray recipes = new JSONArray();
-					for (String recipe : q.list().get(0).getUserWish()) {
-						recipes.put(recipe);
-					}
-					jsonData.put("recipes", recipes);
-				} else {
-					jsonData.put("recipes", "no_data");
+				JSONArray recipes = new JSONArray();
+				userIds = new JSONArray();
+				comments = new JSONArray();
+				for (RecipeUserComments recipe : q.list()) {
+					userIds.put(recipe.getUserMailId());
+					comments.put(recipe.getComments());
 				}
+				jsonData.put("comments", comments);
+				jsonData.put("users", userIds);
 				jsonData.put("status", "ok");
-				jsonData.put("userstatus", "exist");
+				jsonData.put("recipestatus", "exist");
 				// jsonData.put("data", q.list());
 				// Gson gsonData = new Gson();
 				// String data = gsonData.toJson(q.list(), ArrayList.class);
 				out.println(jsonData.toJSONString());
 			} else {
 				jsonData = new JSONObject();
-				jsonData.put("userstatus", "not_exist");
+				jsonData.put("recipestatus", "not_exist");
 				jsonData.put("status", "not_ok");
-				jsonData.put("recipes", "no_data");
+				jsonData.put("comments", "no_data");
+				jsonData.put("users", "no_data");
 				out.println(jsonData);
 			}
 		} catch (Exception e) {
 			jsonData = new JSONObject();
+			jsonData.put("recipestatus", "exist");
 			jsonData.put("status", "not_ok");
-			jsonData.put("recipes", "no_data");
+			jsonData.put("comments", "no_data");
+			jsonData.put("users", "no_data");
 			jsonData.put("error", e);
 			out.println(jsonData);
 		}
