@@ -38,39 +38,39 @@ public class UnlikeRecipe extends HttpServlet {
 				jsonData = new JSONObject();
 				jsonData.put("category", q.list().get(0).getCategory());
 				jsonData.put("description", q.list().get(0).getDescription());
-				jsonData.put("imageName", q.list().get(0).getImageName());
+				jsonData.put("imagename", q.list().get(0).getImageName());
 				jsonData.put("instructions", q.list().get(0).getInstructions());
-				jsonData.put("recipeName", q.list().get(0).getRecipeName());
-				jsonData.put("recipeOrigin", q.list().get(0).getRecipeOrigin());
-				jsonData.put("recipePostedDate", q.list().get(0)
+				jsonData.put("recipename", q.list().get(0).getRecipeName());
+				jsonData.put("recipeorigin", q.list().get(0).getRecipeOrigin());
+				jsonData.put("recipeposteddate", q.list().get(0)
 						.getRecipePostedDate());
-				jsonData.put("recipeTaste", q.list().get(0).getRecipeTaste());
+				jsonData.put("recipetaste", q.list().get(0).getRecipeTaste());
 				jsonData.put("serving", q.list().get(0).getServing());
-				jsonData.put("timeToCook", q.list().get(0).getTimeTocook());
-				jsonData.put("timeToPrepare", q.list().get(0)
+				jsonData.put("timetocook", q.list().get(0).getTimeTocook());
+				jsonData.put("timetoprepare", q.list().get(0)
 						.getTimeToPrepare());
-				jsonData.put("totalComment", q.list().get(0).getTotalComment());
-				jsonData.put("totalLikes", q.list().get(0).getTotalLikes());
-				jsonData.put("totalRating", q.list().get(0).getTotalRating());
-				jsonData.put("totalTime", q.list().get(0).getTotalTime());
+				jsonData.put("totalcomment", q.list().get(0).getTotalComment());
+				jsonData.put("totallikes", q.list().get(0).getTotalLikes());
+				jsonData.put("totalrating", q.list().get(0).getTotalRating());
+				jsonData.put("totaltime", q.list().get(0).getTotalTime());
 				jsonData.put("type", q.list().get(0).getType());
-				jsonData.put("videoLink", q.list().get(0).getVideoLink());
-				jsonData.put("imageStatus", q.list().get(0).getImageStatus());
-				jsonData.put("videoStatus", q.list().get(0).getVideoStatus());
-				jsonData.put("unlikedStatus", "ok");
+				jsonData.put("videolink", q.list().get(0).getVideoLink());
+				jsonData.put("imagestatus", q.list().get(0).getImageStatus());
+				jsonData.put("videostatus", q.list().get(0).getVideoStatus());
+				jsonData.put("unlikedstatus", "ok");
 				// jsonData.put("data", q.list());
 				// Gson gsonData = new Gson();
 				// String data = gsonData.toJson(q.list(), ArrayList.class);
 				out.println(jsonData.toJSONString());
 			} else {
 				jsonData = new JSONObject();
-				jsonData.put("unlikedStatus", "not_ok");
-				jsonData.put("recipeName", req.getParameter("recipename"));
+				jsonData.put("unlikedstatus", "not_ok");
+				jsonData.put("recipename", req.getParameter("recipename"));
 				out.println(jsonData.toJSONString());
 			}
 		} catch (Exception e) {
 			jsonData = new JSONObject();
-			jsonData.put("unlikedStatus", "not_ok");
+			jsonData.put("unlikedstatus", "not_ok");
 			jsonData.put("error", e);
 			out.println(jsonData.toJSONString());
 		}

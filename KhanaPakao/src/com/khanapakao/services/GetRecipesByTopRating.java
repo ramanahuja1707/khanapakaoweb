@@ -64,13 +64,13 @@ public class GetRecipesByTopRating extends HttpServlet {
 				out.println(jsonData.toJSONString());
 			} else {
 				jsonData = new JSONObject();
-				jsonData.put("Status", "not_ok");
+				jsonData.put("status", "not_ok");
 				jsonData.put("recipes", "no_data");
 				out.println(jsonData);
 			}
 		} catch (Exception e) {
 			jsonData = new JSONObject();
-			jsonData.put("Status", "not_ok");
+			jsonData.put("status", "not_ok");
 			jsonData.put("recipes", "no_data");
 			jsonData.put("error", e);
 			out.println(jsonData);
