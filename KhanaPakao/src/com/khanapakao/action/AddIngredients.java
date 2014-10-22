@@ -2,6 +2,7 @@ package com.khanapakao.action;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -17,7 +18,7 @@ import com.khanapakao.dto.Ingredients;
 import com.khanapakao.dto.Recipe;
 
 public class AddIngredients extends HttpServlet {
-	JSONObject jsonData;
+	ArrayList<String> jsonData;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -27,11 +28,13 @@ public class AddIngredients extends HttpServlet {
 			Objectify ob = ObjectifyService.begin();
 
 			// getting data
-			String recipeName = req.getParameter("recipe");
-			String ingredientName = req.getParameter("name");
-			String ingredientQuantity = req.getParameter("quantity");
-			String ingredientImageName = req.getParameter("imagename");
-			String ingredientDescription = req.getParameter("description");
+			String recipeName = req.getParameter("recipeName");
+			String ingredientName = req.getParameter("ingredientName");
+			String ingredientQuantity = req.getParameter("ingredientQuantity");
+			String ingredientImageName = req
+					.getParameter("ingredientImageName");
+			String ingredientDescription = req
+					.getParameter("ingredientDescription");
 
 			if (!(recipeName.equals("")) && (!(ingredientName.equals("")))
 					&& (!(ingredientDescription.equals("")))
@@ -47,36 +50,43 @@ public class AddIngredients extends HttpServlet {
 
 				// saving to datastore
 				ob.put(ingredients);
-				jsonData = new JSONObject();
-				jsonData.put("ingredientsavedstatus", "ok");
-				out.println(jsonData.toString());
+				out.println("<a href='" + "adminPage.jsp"
+						+ "'>Back</a><br><br>");
+				out.println("<a href='" + "addIngredient.jsp"
+						+ "'>Add More Ingredients</a><br><br>");
 			} else {
-
-				jsonData = new JSONObject();
-				jsonData.put("ingredientsavedstatus", "not_ok");
+				jsonData = new ArrayList<>();
 				if (recipeName.equals("")) {
-					jsonData.put("recipenamestatus", "empty");
+					jsonData.add("Recipe Name Is Empty");
 				}
 				if (ingredientName.equals("")) {
-					jsonData.put("ingredientnamestatus", "empty");
+					jsonData.add("Ingredient name is empty");
 				}
 				if (ingredientDescription.equals("")) {
-					jsonData.put("ingredientdescriptionstatus", "empty");
+					jsonData.add("Ingredient Description Is Empty");
 				}
 				if (ingredientImageName.equals("")) {
-					jsonData.put("ingredientimagenamestatus", "empty");
+					jsonData.add("Ingredient Image Name Is Empty");
 				}
 				if (ingredientQuantity.equals("")) {
-					jsonData.put("ingredientquantitystatus", "empty");
+					jsonData.add("Ingredient Quantity Is Empty");
 				}
-				out.println(jsonData.toString());
+				out.println("Error generated !!!");
+				out.println("<br><br>");
+				for (String error : jsonData) {
+					out.println(error);
+					out.println("<br><br>");
+				}
+
+				out.println("<br><br>");
+				out.println("<a href='" + "adminPage.jsp"
+						+ "'>Back</a><br><br>");
 			}
 
 		} catch (Exception e) {
-			jsonData = new JSONObject();
-			jsonData.put("ingredientsavedstatus", "not_ok");
-			jsonData.put("error", e);
-			out.println(jsonData.toString());
+			out.println("Error generated :" + e);
+			out.println("<br><br>");
+			out.println("<a href='" + "adminPage.jsp" + "'>Back</a><br><br>");
 		}
 	}
 }

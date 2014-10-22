@@ -22,7 +22,7 @@
 		</h1>
 		<a href="adminPage.jsp"><input type="button" value="Back"></a>
 		<br> <br>
-		<form action="addingredients" method="post">
+		<form action="addingredients" method="get">
 			Recipe Name:<input type="text" name="recipeName" /><br> <br>
 			Ingredient Name:<input type="text" name="ingredientName" /><br>
 			<br>Ingredient Description:

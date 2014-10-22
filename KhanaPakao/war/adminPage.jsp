@@ -22,7 +22,7 @@
 	<br>
 	<br>
 	<a href="addIngredient.jsp"><input type="button"
-		value="Add Ingredinets" /></a>
+		value="Add Ingredients" /></a>
 	<br>
 	<br>
 	<a href="adminlogout"><input type="button" value="Logout" /></a>
