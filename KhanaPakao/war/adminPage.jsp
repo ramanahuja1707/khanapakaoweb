@@ -21,8 +21,11 @@
 	<a href="addRecipe.jsp"><input type="button" value="Add New Recipe" /></a>
 	<br>
 	<br>
+	<a href="addIngredient.jsp"><input type="button"
+		value="Add Ingredinets" /></a>
+	<br>
+	<br>
 	<a href="adminlogout"><input type="button" value="Logout" /></a>
-
 
 </body>
 </html>
