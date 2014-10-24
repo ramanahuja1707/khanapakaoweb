@@ -31,7 +31,7 @@ public class GetIngredients extends HttpServlet {
 					Ingredients.class).filter("recipeName", recipeName);
 			if (q.list().size() > 0) {
 				jsonData = new JSONObject();
-				jsonData.put("recipeName", recipeName);
+				jsonData.put("recipename", recipeName);
 				jsonData.put("ingredientname", q.list().get(0)
 						.getIngredientName());
 				jsonData.put("ingredientquantity", q.list().get(0)

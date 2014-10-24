@@ -34,24 +34,25 @@ public class GetRecipesByType extends HttpServlet {
 					JSONObject tempObject = new JSONObject();
 					tempObject.put("category", recipe.getCategory());
 					tempObject.put("description", recipe.getDescription());
-					tempObject.put("imageName", recipe.getImageName());
+					tempObject.put("imagename", recipe.getImageName());
 					tempObject.put("instructions", recipe.getInstructions());
-					tempObject.put("recipeName", recipe.getRecipeName());
-					tempObject.put("recipeOrigin", recipe.getRecipeOrigin());
-					tempObject.put("recipePostedDate",
+					tempObject.put("recipename", recipe.getRecipeName());
+					tempObject.put("recipeorigin", recipe.getRecipeOrigin());
+					tempObject.put("recipeposteddate",
 							recipe.getRecipePostedDate());
-					tempObject.put("recipeTaste", recipe.getRecipeTaste());
+					tempObject.put("recipetaste", recipe.getRecipeTaste());
 					tempObject.put("serving", recipe.getServing());
-					tempObject.put("timeToCook", recipe.getTimeTocook());
-					tempObject.put("timeToPrepare", recipe.getTimeToPrepare());
-					tempObject.put("totalComment", recipe.getTotalComment());
-					tempObject.put("totalLikes", recipe.getTotalLikes());
-					tempObject.put("totalRating", recipe.getTotalRating());
-					tempObject.put("totalTime", recipe.getTotalTime());
+					tempObject.put("timetocook", recipe.getTimeTocook());
+					tempObject.put("timetoprepare", recipe.getTimeToPrepare());
+					tempObject.put("totalcomment", recipe.getTotalComment());
+					tempObject.put("totallikes", recipe.getTotalLikes());
+					tempObject.put("totalrating", recipe.getTotalRating());
+					tempObject.put("totaltime", recipe.getTotalTime());
 					tempObject.put("type", recipe.getType());
-					tempObject.put("videoLink", recipe.getVideoLink());
-					tempObject.put("imageStatus", recipe.getImageStatus());
-					tempObject.put("videoStatus", recipe.getVideoStatus());
+					tempObject.put("videolink", recipe.getVideoLink());
+					tempObject.put("imagestatus", recipe.getImageStatus());
+					tempObject.put("videostatus", recipe.getVideoStatus());
+
 
 					recipes.put(tempObject);
 				}
