@@ -177,6 +177,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	</servlet-mapping>
 
 
+	<servlet>
+		<servlet-name>GetUserWishlist</servlet-name>
+		<servlet-class>com.khanapakao.services.GetUserWishlist</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetUserWishlist</servlet-name>
+		<url-pattern>/getuserwishlist</url-pattern>
+	</servlet-mapping>
 
 
 

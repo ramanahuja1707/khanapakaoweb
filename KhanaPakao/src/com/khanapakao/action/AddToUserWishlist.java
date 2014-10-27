@@ -38,10 +38,24 @@ public class AddToUserWishlist extends HttpServlet {
 					user.setUserMailId(userMailId);
 
 					if (query.list().get(0).getUserWish() != null) {
-						ArrayList<String> wishlist = query.list().get(0)
-								.getUserWish();
-						wishlist.add(req.getParameter("recipe"));
-						user.setUserWish(wishlist);
+						boolean recipeAlreadyExist = false;
+						for (String recipeString : query.list().get(0)
+								.getUserWish()) {
+							if ((recipeString
+									.equals(req.getParameter("recipe")))) {
+								recipeAlreadyExist = true;
+							}
+						}
+						if (recipeAlreadyExist == false) {
+							ArrayList<String> wishlist = query.list().get(0)
+									.getUserWish();
+							wishlist.add(req.getParameter("recipe"));
+							user.setUserWish(wishlist);
+						} else {
+							ArrayList<String> wishlist = query.list().get(0)
+									.getUserWish();
+							user.setUserWish(wishlist);
+						}
 					} else {
 						ArrayList<String> wishlist = new ArrayList<>();
 						wishlist.add(req.getParameter("recipe"));
