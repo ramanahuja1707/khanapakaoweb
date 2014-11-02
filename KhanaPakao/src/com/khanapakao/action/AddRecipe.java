@@ -37,7 +37,7 @@ public class AddRecipe extends HttpServlet {
 			String videoStatus = req.getParameter("videoStatus");
 			String videoLink = req.getParameter("videoLink");
 			String imageStatus = req.getParameter("imageStatus");
-			String imageName = req.getParameter("recipeName");
+			String imageName = req.getParameter("imageName");
 			String recipeOrigin = req.getParameter("recipeOrigin");
 			String recipeTaste = req.getParameter("recipeTaste");
 			String type = req.getParameter("type");
