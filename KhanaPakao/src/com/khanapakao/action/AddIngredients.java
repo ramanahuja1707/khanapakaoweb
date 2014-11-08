@@ -46,6 +46,7 @@ public class AddIngredients extends HttpServlet {
 				ingredients.setIngredientImageName(ingredientImageName);
 				ingredients.setIngredientName(ingredientName);
 				ingredients.setIngredientQuantity(ingredientQuantity);
+				ingredients.setId(recipeName + "_" + ingredientName);
 				ingredients.setRecipeName(recipeName);
 
 				// saving to datastore

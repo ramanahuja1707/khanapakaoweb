@@ -14,8 +14,10 @@ import com.khanapakao.dto.Ingredients;
 import com.khanapakao.dto.Recipe;
 import com.khanapakao.dto.RecipeUserComments;
 import com.khanapakao.dto.User;
+import com.khanapakao.dto.UserRating;
 import com.khanapakao.dto.UserReminder;
 
+@SuppressWarnings("serial")
 public class ObjectifyRegisterService extends HttpServlet {
 
 	// @Override
@@ -34,6 +36,7 @@ public class ObjectifyRegisterService extends HttpServlet {
 		ObjectifyService.register(RecipeUserComments.class);
 		ObjectifyService.register(Ingredients.class);
 		ObjectifyService.register(UserReminder.class);
+		ObjectifyService.register(UserRating.class);
 	}
 
 	@Override

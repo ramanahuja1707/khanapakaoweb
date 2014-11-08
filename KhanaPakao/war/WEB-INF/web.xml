@@ -188,6 +188,29 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 
 
 
+	<servlet>
+		<servlet-name>RateRecipe</servlet-name>
+		<servlet-class>com.khanapakao.action.RateRecipe</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RateRecipe</servlet-name>
+		<url-pattern>/raterecipe</url-pattern>
+	</servlet-mapping>
+
+
+
+
+
+	<servlet>
+		<servlet-name>GetUserRating</servlet-name>
+		<servlet-class>com.khanapakao.services.GetUserRating</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetUserRating</servlet-name>
+		<url-pattern>/getuserrating</url-pattern>
+	</servlet-mapping>
+
+
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>

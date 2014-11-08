@@ -27,10 +27,10 @@
 			Ingredient Name:<input type="text" name="ingredientName" /><br>
 			<br>Ingredient Description:
 			<textarea rows="10" cols="30" name="ingredientDescription"></textarea>
-			<br /> <br />Ingredient Quantity: Ingredient Name:<input
-				type="text" name="ingredientQuantity" /> <br /> <br />Ingredient
-			Image Name:<input type="text" name="ingredientImageName" /> <input
-				type="submit" value="Add Recipe">
+			<br /> <br />Ingredient Quantity: <input type="text"
+				name="ingredientQuantity" /> <br /> <br />Ingredient Image Name:<input
+				type="text" name="ingredientImageName" /> <input type="submit"
+				value="Add Recipe">
 		</form>
 	</center>
 </body>

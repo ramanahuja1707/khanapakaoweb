@@ -6,12 +6,22 @@ import com.googlecode.objectify.annotation.Entity;
 
 @Entity
 public class Ingredients {
+	// recipename_ingredientname
 	@Id
+	String id;
 	String recipeName;
 	String ingredientName;
 	String ingredientQuantity;
 	String ingredientImageName;
 	String ingredientDescription;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public String getRecipeName() {
 		return recipeName;

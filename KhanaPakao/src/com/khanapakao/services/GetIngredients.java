@@ -32,14 +32,24 @@ public class GetIngredients extends HttpServlet {
 			if (q.list().size() > 0) {
 				jsonData = new JSONObject();
 				jsonData.put("recipename", recipeName);
-				jsonData.put("ingredientname", q.list().get(0)
-						.getIngredientName());
-				jsonData.put("ingredientquantity", q.list().get(0)
-						.getIngredientQuantity());
-				jsonData.put("ingredientdescription", q.list().get(0)
-						.getIngredientDescription());
-				jsonData.put("ingredientimagename", q.list().get(0)
-						.getIngredientName());
+				org.json.simple.JSONArray ingredients = new org.json.simple.JSONArray();
+				for (Ingredients ingredient : q) {
+					JSONObject ingredientTemp = new JSONObject();
+
+					ingredientTemp.put("ingredientname",
+							ingredient.getIngredientName());
+
+					ingredientTemp.put("ingredientquantity",
+							ingredient.getIngredientQuantity());
+					ingredientTemp.put("ingredientimagename",
+							ingredient.getIngredientImageName());
+
+					ingredientTemp.put("ingredientdescription",
+							ingredient.getIngredientDescription());
+					ingredients.add(ingredientTemp);
+				}
+				jsonData.put("ingredients", ingredients);
+
 				jsonData.put("ingredientstatus", "ok");
 				jsonData.put("recipestatus", "exist");
 				// jsonData.put("data", q.list());
