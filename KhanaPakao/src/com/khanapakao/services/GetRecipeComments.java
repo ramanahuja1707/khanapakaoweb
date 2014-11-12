@@ -20,6 +20,7 @@ public class GetRecipeComments extends HttpServlet {
 	JSONArray userIds;
 	JSONArray comments;
 
+	@SuppressWarnings("unchecked")
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {

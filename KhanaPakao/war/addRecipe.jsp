@@ -25,7 +25,8 @@
 		<form action="addrecipe" method="post">
 			Recipe Name:<input type="text" name="recipeName" /><br> <br>
 			Select Category:<select name="category">
-				<option value="appetizers">APPETIZERS</option>
+				<option value="lowcalories">LOW CALORIES</option>
+				<option value="gravy">GRAVY</option>
 				<option value="bread">BREAD</option>
 				<option value="beverages">BEVERAGES</option>
 				<option value="cookies">COOKIES</option>
