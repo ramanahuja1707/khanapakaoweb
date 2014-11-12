@@ -16,9 +16,11 @@ import com.googlecode.objectify.Query;
 import com.khanapakao.dto.User;
 import com.khanapakao.services.ObjectifyRegisterService;
 
+@SuppressWarnings("serial")
 public class AddToUserWishlist extends HttpServlet {
 	JSONObject jsonData;
 
+	@SuppressWarnings("unchecked")
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
@@ -51,20 +53,22 @@ public class AddToUserWishlist extends HttpServlet {
 									.getUserWish();
 							wishlist.add(req.getParameter("recipe"));
 							user.setUserWish(wishlist);
+							jsonData.put("wishliststatus", "added");
 						} else {
 							ArrayList<String> wishlist = query.list().get(0)
 									.getUserWish();
 							user.setUserWish(wishlist);
+							jsonData.put("wishliststatus", "already_added");
 						}
 					} else {
 						ArrayList<String> wishlist = new ArrayList<>();
 						wishlist.add(req.getParameter("recipe"));
 						user.setUserWish(wishlist);
+						jsonData.put("wishliststatus", "added");
 					}
 					// saving to datastore
 					ob.put(user);
 					jsonData.put("userstatus", "exist");
-					jsonData.put("wishliststatus", "added");
 					out.println(jsonData.toString());
 				} else {
 					jsonData = new JSONObject();
