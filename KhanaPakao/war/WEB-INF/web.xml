@@ -230,8 +230,30 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		<servlet-name>AddCookingMethods</servlet-name>
 		<url-pattern>/addcookingmethods</url-pattern>
 	</servlet-mapping>
-	
-	
+
+
+
+	<servlet>
+		<servlet-name>GetCookingMethods</servlet-name>
+		<servlet-class>com.khanapakao.services.GetCookingMethods</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetCookingMethods</servlet-name>
+		<url-pattern>/getcookingmethods</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>GetAlternateIngredient</servlet-name>
+		<servlet-class>com.khanapakao.services.GetAlternateIngredient</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetAlternateIngredient</servlet-name>
+		<url-pattern>/getalternateingredient</url-pattern>
+	</servlet-mapping>
+
+
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>

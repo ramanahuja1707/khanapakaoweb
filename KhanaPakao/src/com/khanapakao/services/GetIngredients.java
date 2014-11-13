@@ -10,15 +10,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.simple.JSONObject;
 
-import com.google.appengine.labs.repackaged.org.json.JSONArray;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.Query;
 import com.khanapakao.dto.Ingredients;
-import com.khanapakao.dto.Recipe;
 
+@SuppressWarnings("serial")
 public class GetIngredients extends HttpServlet {
 	JSONObject jsonData;
 
+	@SuppressWarnings("unchecked")
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
