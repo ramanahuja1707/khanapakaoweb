@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Khana Pakao</title>
+<title>Insert title here</title>
 </head>
 <body>
-
 	<%
 		HttpSession s = request.getSession(false);
 		if (s.getAttribute("username") == null) {
@@ -18,20 +17,26 @@
 	%>
 	<center>
 		<h1>
-			<u>Add Ingredient</u>
+			<u>Add Alternate Ingredient</u>
 		</h1>
 		<a href="adminPage.jsp"><input type="button" value="Back"></a>
 		<br> <br>
-		<form action="addingredients" method="get">
-			Recipe Name:<input type="text" name="recipeName" /><br> <br>
+		<form action="addalternateingredient" method="get">
 			Ingredient Name:<input type="text" name="ingredientName" /><br>
-			<br>Ingredient Description:
+			<br> Alternate Ingredient Name:<input type="text"
+				name="ingredientAlternateName" /><br> <br>Ingredient
+			Description:
 			<textarea rows="10" cols="30" name="ingredientDescription"></textarea>
+			<br /> <br />Alternate Ingredient Description:
+			<textarea rows="10" cols="30" name="ingredientAlternateDescription"></textarea>
 			<br /> <br />Ingredient Quantity: <input type="text"
-				name="ingredientQuantity" /> <br /> <br />Ingredient Image Name:<input
-				type="text" name="ingredientImageName" /> <br>
-			<br>
-			<input type="submit" value="Add Ingredients">
+				name="ingredientQuantity" /> <br /> <br />Alternate Ingredient
+			Quantity: <input type="text" name="ingredientAlternateQuantity" /> <br />
+			<br />Ingredient Image Name:<input type="text"
+				name="ingredientImageName" /> <br> <br>Alternate Ingredient Image
+			Name:<input type="text"
+				name="ingredientAlternateImageName" /><br> <br> <input
+				type="submit" value="Add">
 		</form>
 	</center>
 </body>

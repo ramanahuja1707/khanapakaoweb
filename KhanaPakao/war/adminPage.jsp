@@ -26,6 +26,13 @@
 	<br>
 	<br>
 	<a href="adminlogout"><input type="button" value="Logout" /></a>
-
+	<br>
+	<br>
+	<a href="addAlternateIngredient.jsp"><input type="button"
+		value="Add Alternate Ingredients" /></a>
+	<br>
+	<br>
+	<a href="addCookingMethods.jsp"><input type="button"
+		value="Add Cooking Methods" /></a>
 </body>
 </html>

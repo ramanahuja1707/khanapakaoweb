@@ -13,8 +13,7 @@ public class UserReminder {
 	@Id
 	String userMailId;
 	String recipeName;
-	@Temporal(TemporalType.DATE)
-	Date remiderDate;
+	String remiderDate;
 
 	public String getUserMailId() {
 		return userMailId;
@@ -32,11 +31,11 @@ public class UserReminder {
 		this.recipeName = recipeName;
 	}
 
-	public Date getRemiderDate() {
+	public String getRemiderDate() {
 		return remiderDate;
 	}
 
-	public void setRemiderDate(Date remiderDate) {
+	public void setRemiderDate(String remiderDate) {
 		this.remiderDate = remiderDate;
 	}
 
