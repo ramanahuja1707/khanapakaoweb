@@ -13,11 +13,12 @@ import org.json.simple.JSONObject;
 
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.Query;
+import com.khanapakao.dto.Recipe;
 import com.khanapakao.dto.User;
 
 public class GetUserWishlist extends HttpServlet {
 	JSONObject jsonData;
-	JSONArray wishlistArray;
+	JSONArray wishlistArray, imageNameArray, categoryArray;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -32,16 +33,23 @@ public class GetUserWishlist extends HttpServlet {
 					"userMailId", userMailId);
 			if (q.list().size() == 1) {
 				jsonData = new JSONObject();
-
 				if (q.list().get(0).getUserWish() == null) {
 					jsonData.put("wishlist", null);
 					jsonData.put("wishliststatus", "empty");
 				} else {
 					wishlistArray = new JSONArray();
+					imageNameArray = new JSONArray();
+					categoryArray = new JSONArray();
 					for (String wishlist : q.list().get(0).getUserWish()) {
 						wishlistArray.add(wishlist);
+						Query<Recipe> q1 = (Query<Recipe>) ob.query(
+								Recipe.class).filter("recipeName", wishlist);
+						imageNameArray.add(q1.list().get(0).getImageName());
+						categoryArray.add(q1.list().get(0).getCategory());
 					}
 					jsonData.put("wishlist", wishlistArray);
+					jsonData.put("imagename", imageNameArray);
+					jsonData.put("category", categoryArray);
 					jsonData.put("wishliststatus", "not_empty");
 				}
 				jsonData.put("userstatus", "ok");
@@ -53,6 +61,8 @@ public class GetUserWishlist extends HttpServlet {
 				jsonData = new JSONObject();
 				jsonData.put("userstatus", "not_ok");
 				jsonData.put("wishlist", null);
+				jsonData.put("imagename", null);
+				jsonData.put("category", null);
 				jsonData.put("wishliststatus", "empty");
 				out.println(jsonData.toJSONString());
 			}
