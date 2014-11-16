@@ -254,6 +254,30 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	</servlet-mapping>
 
 
+
+	<servlet>
+		<servlet-name>GetAllAlternateIngredient</servlet-name>
+		<servlet-class>com.khanapakao.services.GetAllAlternateIngredient</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetAllAlternateIngredient</servlet-name>
+		<url-pattern>/getallalternateingredient</url-pattern>
+	</servlet-mapping>
+
+
+
+
+
+	<servlet>
+		<servlet-name>GetAllCookingMethods</servlet-name>
+		<servlet-class>com.khanapakao.services.GetAllCookingMethods</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetAllCookingMethods</servlet-name>
+		<url-pattern>/getallcookingmethods</url-pattern>
+	</servlet-mapping>
+
+
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
