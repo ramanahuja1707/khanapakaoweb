@@ -12,6 +12,7 @@ import com.googlecode.objectify.ObjectifyFactory;
 import com.googlecode.objectify.ObjectifyService;
 import com.khanapakao.dto.AlternateIngredients;
 import com.khanapakao.dto.CookingMethods;
+import com.khanapakao.dto.Feedback;
 import com.khanapakao.dto.Ingredients;
 import com.khanapakao.dto.Recipe;
 import com.khanapakao.dto.RecipeUserComments;
@@ -41,6 +42,7 @@ public class ObjectifyRegisterService extends HttpServlet {
 		ObjectifyService.register(UserRating.class);
 		ObjectifyService.register(AlternateIngredients.class);
 		ObjectifyService.register(CookingMethods.class);
+		ObjectifyService.register(Feedback.class);
 	}
 
 	@Override
